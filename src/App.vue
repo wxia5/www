@@ -1,11 +1,19 @@
 <template>
-  <div id="app">
-  	<headMenu></headMenu>
-  	<leftMenu></leftMenu>
-		<div id="cesiumContainer">
-		</div>
-  </div>
-  
+  <el-container>
+    <el-header>
+      <headMenu></headMenu>
+    </el-header>
+    <el-container>
+      <el-aside width="150px">
+        <leftMenu></leftMenu>
+      </el-aside>
+      <el-main>
+        <router-view></router-view>
+        <div id="cesiumContainer">
+      </div>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
@@ -22,7 +30,7 @@ export default {
   name: 'App',
   data(){
   	return {
-  		
+
   	}
   },
   mounted:function(){
@@ -35,14 +43,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body{
+  margin: 0;
 }
-#cesiumContainer{
-	height: 700px;
-}
+
 </style>
